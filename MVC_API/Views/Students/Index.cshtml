@@ -9,7 +9,7 @@
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
-<table class="table">
+@*<table class="table">
     <tr>
         <th>
             @Html.DisplayNameFor(model => model.FirstName)
@@ -21,11 +21,11 @@
             @Html.DisplayNameFor(model => model.FavoriteColor)
         </th>
         <th></th>
-    </tr>
+    </tr>*@
 
 @foreach (var item in Model) {
     <tr>
-        <td>
+        @*<td>
             @Html.DisplayFor(modelItem => item.FirstName)
         </td>
         <td>
@@ -33,11 +33,25 @@
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.FavoriteColor)
+        </td>*@
+
+
+        <td>
+            <div class="card" style="width:18rem;">
+                <div class="card-body">
+                    <h5 class="card-title">@item.FirstName @item.LastName</h5>
+                    <p class="card-text">@item.StudentID</p>
+                    <p class="card-text">@item.FavoriteColor</p>
+
+                </div>
+            </div>
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id = item.StudentID }, new {@class = "btn btn-primary"}) |
-            @Html.ActionLink("Details", "Details", new { id=item.StudentID }, new { @class = "btn btn-info" }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.StudentID }, new { @class = "btn btn-danger" })
+
+            @Html.ActionLink("Edit", "Edit", new { id = item.StudentID }, new { @class = "btn btn-primary" }) |
+            @Html.ActionLink("Details", "Details", new { id = item.StudentID }, new { @class = "btn btn-info" }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.StudentID }, new { @class = "btn btn-danger" })
+
         </td>
     </tr>
 }
