@@ -15,3 +15,8 @@ select,
 textarea {
     max-width: 280px;
 }
+
+.student{
+    border:dashed;
+    float:left;
+}
